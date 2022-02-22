@@ -4,5 +4,5 @@ export default {
   },
   toggleTodo({ commit }, todo) {
     commit('toggle', todo)
-  }
+  },
 }

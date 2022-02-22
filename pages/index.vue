@@ -27,7 +27,12 @@
             <div v-show="statusFilter == 'pending'" class="py-2 mb-4">
               <v-list-item v-for="todo in pendingTodos" :key="todo.id">
                 <v-list-item-action>
-                  <v-checkbox color="primary" value :label="todo.title" @change="toggle(todo)"></v-checkbox>
+                  <v-checkbox
+                    color="primary"
+                    value
+                    :label="todo.title"
+                    @change="toggle(todo)"
+                  ></v-checkbox>
                 </v-list-item-action>
               </v-list-item>
             </div>
@@ -85,12 +90,12 @@ export default {
         document.querySelector('#btn-completed').classList.remove('active')
         document.querySelector('#btn-pending').classList.add('active')
 
-        this.statusFilter = 'pending';
+        this.statusFilter = 'pending'
       } else if (status === 'completed') {
         document.querySelector('#btn-completed').classList.add('active')
         document.querySelector('#btn-pending').classList.remove('active')
 
-        this.statusFilter = 'completed';
+        this.statusFilter = 'completed'
       }
     },
     addItem() {
@@ -100,11 +105,11 @@ export default {
       }
     },
     toggle(todo) {
-      const vm = this;
+      const vm = this
 
       setTimeout(() => {
-        vm.toggleTodo(todo);
-      }, 1000);
+        vm.toggleTodo(todo)
+      }, 1000)
     },
     ...mapActions({
       addTodo: 'todos/addTodo',
